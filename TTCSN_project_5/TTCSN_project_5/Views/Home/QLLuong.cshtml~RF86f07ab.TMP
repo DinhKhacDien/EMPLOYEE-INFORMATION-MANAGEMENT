@@ -1,0 +1,161 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="~/asset/css/QLLuong.css" rel="stylesheet" />
+    <link href="~/asset/css_one/fontawesome-free-6.4.2/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+
+</head>
+<body>
+
+    @{
+        ViewBag.Title = "QLLuong";
+    }
+
+    <h2 class="titel">Quản lý lương</h2>
+    <style>
+
+        
+        
+        .SearchAndSort,
+        .SortByThucLinh {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .decrease {
+            display: none;
+        }
+
+        #linkDH {
+            cursor: pointer;
+        }
+
+        #sort {
+            margin: 0 10px;
+        }
+    </style>
+    @{
+        double thucLinh = 0;
+        int lcb = 0;
+        double hsl = 0;
+        int tt = 0;
+        int tp = 0;
+        int pc = 0;
+        double thue = 0;
+    }
+    <button class="button"><a href="@Url.Action("QLLuong", "Home")">Reaload</a></button>
+    <div class="SearchAndSort">
+        <div class="menuSearch">
+            <div class="searchByName">
+                @using (@Html.BeginForm("SearchNhanVien", "Luong"))
+                {
+                    @Html.Label("Tìm kiếm lương nhân viên");
+                    <input type="text" name="name" id="name" placeholder="Nhập tên nhân viên" size="40" />
+                    <button type="submit">Search</button>
+                }
+            </div>
+        </div>
+        <div class="menuSort">
+            <div class="SortByThucLinh">
+                <select name="sort" id="sort">
+                    <option value="">Sắp xếp</option>
+                    <option value="decrease">Giảm Dần</option>
+                    <option value="increase">Tăng dần</option>
+                </select>
+                <a name="linkDH" id="linkDH">Lọc</a>
+                <a class="decrease" href="@Url.Action("SortByThucLinhDecrease","Luong")">Sort</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        var menuSortElement = document.querySelector(".SortByThucLinh");
+        var selectValue = document.querySelector("#sort");
+        var decreaseElement = document.querySelector(".decrease");
+        var linkDHElement = document.querySelector("#linkDH")
+        var dhuong = "";
+        var errorName = "";
+        function getValue() {
+            if (selectValue.value != "") {
+                dhuong = selectValue.value;
+            }
+        }
+        function dieuHuong() {
+            if (dhuong == "decrease") {
+                decreaseElement.style.display = "block";
+                linkDHElement.style.display = "none";
+            } else if (dhuong == "increase") {
+                searchByChucVuElement.style.display = "block";
+                menuSearchElement.style.display = "none";
+            }
+        }
+        menuSortElement.addEventListener('change', getValue);
+        linkDHElement.addEventListener('click', dieuHuong);
+    </script>
+    <table border="1" style="border-collapse:collapse;">
+        <tr>
+            <th>Mã Nhân viên</th>
+            <th>Tên Nhân viên</th>
+            <th>Lương cơ bản</th>
+            <th>Hệ số lương</th>
+            <th>Tiền thưởng</th>
+            <th>Tiền phạt</th>
+            <th>Phụ cấp</th>
+            <th>Thuế</th>
+            <th>Thực lĩnh</th>
+            <th>Tổng số bản ghi: @ViewBag.lg</th>
+        </tr>
+
+        @{
+            for (int i = 0; i < ViewBag.lg; i++)
+            {
+
+                lcb = @Model[i].LuongCoBan;
+                tt = @Model[i].TienThuong;
+                hsl = @Model[i].HeSoLuong;
+                tp = @Model[i].TienPhat;
+                pc = @Model[i].PhuCap;
+                thue = @Model[i].Thue;
+                thucLinh = lcb * hsl * (1 - thue / 100) + tt - tp + pc;
+                <tr>
+                    <td>@Model[i].MaNhanVien</td>
+                    @{
+                        var ansNV = "";
+                        foreach (var item in ViewBag.listNV)
+                        {
+                            if (Model[i].MaNhanVien == item.MaNhanVien)
+                            {
+                                ansNV = item.HoTen;
+                                break;
+                            }
+                        }
+                    }
+                    <td> @ansNV</td>
+                    <td>@lcb</td>
+                    <td>@hsl</td>
+                    <td>@tt</td>
+                    <td>@tp</td>
+                    <td>@pc</td>
+                    <td>@thue%</td>
+                    <td>@thucLinh</td>
+                    <td>
+                        <button> <a href="@Url.Action("UpdateLuong","Luong",new { @id = @Model[i].MaNhanVien})">Cập nhật</a></button>
+                        <button> <a href="@Url.Action("ChiTietCapNhat","Luong",new { @id = @Model[i].MaNhanVien})">Chi tiết cập nhật</a></button>
+                    </td>
+                </tr>
+            }
+        }
+        @{
+            if (ViewBag.lg == 0)
+            {
+                <tr>
+                    <td colspan="11" style="text-align:center;">Không tồn tại bản ghi nào</td>
+                </tr>
+            }
+        }
+    </table>
+
+</body>
+</html>

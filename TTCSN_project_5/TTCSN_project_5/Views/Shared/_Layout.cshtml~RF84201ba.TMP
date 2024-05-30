@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+    <link href="~/asset/css/Home_base.css" rel="stylesheet" />
+    <link href="~/asset/css/home.css" rel="stylesheet" />
+    <link href="~/asset/css_one/fontawesome-free-6.4.2/css/all.min.css"  rel="stylesheet"/>
+
+</head>
+<style>
+    .Menu{
+        width:20%;
+        float:left;
+        
+    }
+    .content{
+        width:75%;
+        float:right;
+        margin-right:50px;
+    }
+    .Menu_text {
+        font-weight: bold;
+        font-weight: bold;
+    }
+    
+       
+</style>
+<body>
+    <div class="Home">
+        <div class="Menu">
+
+            <div class="Menu_img">
+                <img class="img_logo" src="~/asset/img/logo.jpg" />
+                <span class="img_text">Xin chào </span>
+            </div>
+            <p class="Menu_text">Chức năng</p>
+            <div class="Menu_content">
+                <ul>
+                    <li>
+                        <i class="fa-solid fa-house"></i>
+                        @Html.ActionLink("Trang chủ", "Index", "Home")
+
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa-solid fa-user"></i></a>
+                        @Html.ActionLink("Nhân viên", "QLNhanVien", "Home")
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-dollar-sign"></i>
+                        @Html.ActionLink("Lương", "QLLuong", "Home")
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-users-line"></i>
+                        @Html.ActionLink("Phòng ban", "QLPhongBan", "Home")
+                    </li>
+                    <li>
+                        <i class="fa-regular fa-calendar"></i>
+                        @Html.ActionLink("Ngày nghỉ", "QLNgayNghi", "Home")
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="content">
+            @RenderBody()
+        </div>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

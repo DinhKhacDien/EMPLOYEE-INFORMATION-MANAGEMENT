@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+    <link href="~/asset/css/Home_base.css" rel="stylesheet" />
+    <link href="~/asset/css/home.css" rel="stylesheet" />
+    <link href="~/asset/css_one/fontawesome-free-6.4.2/css/all.min.css"  rel="stylesheet"/>
+
+</head>
+<body>
+    <div class="Menu">
+
+        <div class="Menu_img">
+            <img class="img_logo" src="~/asset/img/logo.jpg" />
+            <span class="img_text">Xin chào </span>
+        </div>
+        <p class="Menu_text">Chức năng</p>
+        <div class="Menu_content">
+            <ul>
+                <li>
+                    
+                    <a href="">@Html.ActionLink("Home", "Index", "Home")</a>
+                </li>
+                <li>
+                    @*<i class="fa-solid fa-house"></i>*@
+                    <a href="">@Html.ActionLink("Nhân viên", "QLNhanVien", "Home")</a>
+                </li>
+                <li><a href="">@Html.ActionLink("Lương", "QLLuong", "Home")</a></li>
+                <li><a href="">@Html.ActionLink("Phòng ban", "QLPhongBan", "Home")</a></li>
+                <li><a href="">@Html.ActionLink("Ngày nghỉ", "QLNgayNghi", "Home")</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year -NTQ solution</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,90 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\Training_to_Intern\\Employees_Project\\TTCSN_project_5\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0C213C0B-9C18-431A-883B-891194A32608}|TTCSN_project_5\\TTCSN_project_5.csproj|e:\\training_to_intern\\employees_project\\ttcsn_project_5\\ttcsn_project_5\\controllers\\dangnhapcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0C213C0B-9C18-431A-883B-891194A32608}|TTCSN_project_5\\TTCSN_project_5.csproj|solutionrelative:ttcsn_project_5\\controllers\\dangnhapcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0C213C0B-9C18-431A-883B-891194A32608}|TTCSN_project_5\\TTCSN_project_5.csproj|E:\\Training_to_Intern\\Employees_Project\\TTCSN_project_5\\ttcsn_project_5\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{0C213C0B-9C18-431A-883B-891194A32608}|TTCSN_project_5\\TTCSN_project_5.csproj|solutionrelative:ttcsn_project_5\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DangNhapController.cs",
+              "DocumentMoniker": "E:\\Training_to_Intern\\Employees_Project\\TTCSN_project_5\\TTCSN_project_5\\Controllers\\DangNhapController.cs",
+              "RelativeDocumentMoniker": "TTCSN_project_5\\Controllers\\DangNhapController.cs",
+              "ToolTip": "E:\\Training_to_Intern\\Employees_Project\\TTCSN_project_5\\TTCSN_project_5\\Controllers\\DangNhapController.cs",
+              "RelativeToolTip": "TTCSN_project_5\\Controllers\\DangNhapController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-30T15:57:29.677Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Web.config",
+              "DocumentMoniker": "E:\\Training_to_Intern\\Employees_Project\\TTCSN_project_5\\TTCSN_project_5\\Web.config",
+              "RelativeDocumentMoniker": "TTCSN_project_5\\Web.config",
+              "ToolTip": "E:\\Training_to_Intern\\Employees_Project\\TTCSN_project_5\\TTCSN_project_5\\Web.config",
+              "RelativeToolTip": "TTCSN_project_5\\Web.config",
+              "ViewState": "AQIAACQAAAAAAAAAAAAAAEAAAAA9AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2024-05-30T15:45:55.72Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 1144,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 1256,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
